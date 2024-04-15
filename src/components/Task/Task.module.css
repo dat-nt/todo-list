@@ -1,0 +1,57 @@
+.task {
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    min-width: 400px;
+    border: 1px solid #000;
+    background-color: rgb(81, 72, 88);
+    padding: 4px 8px;
+    transition: all 0.3s linear;
+}
+
+.done {
+    background-color: rgb(120, 95, 203);
+}
+
+.taskCheck {
+    accent-color: green;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.taskName,
+.editTask {
+    flex: 1;
+    margin: 0 8px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.editTask {
+    padding: 12px 8px;
+    border: none;
+    background-color: #94cdf0;
+}
+
+.btn {
+    font-weight: bold;
+    border: 1px solid #e37a118c;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.editButton {
+    background-color: rgb(116, 139, 14);
+    padding: 8px 11px;
+}
+
+.deleteButton {
+    background-color: rgb(107, 14, 6);
+    padding: 8px 4px;
+    margin-left: 4px;
+}
