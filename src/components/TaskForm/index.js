@@ -5,7 +5,8 @@ function TaskForm({ onAdd }) {
     const [task, setTask] = useState('');
     const inputBox = useRef();
 
-    const handleAdd = () => {
+    const handleAdd = (e) => {
+        e.preventDefault();
         if (task.trim()) {
             onAdd(task.trim());
             setTask('');
@@ -14,7 +15,10 @@ function TaskForm({ onAdd }) {
     }
 
     return (
-        <div className={styles.taskForm}>
+        <form
+            className={styles.taskForm}
+            onSubmit={e => handleAdd(e)}
+        >
             <input
                 ref={inputBox}
                 className={styles.taskInput}
@@ -25,11 +29,12 @@ function TaskForm({ onAdd }) {
             />
             <button
                 className={styles.addButton}
-                onClick={handleAdd}
+                onClick={e => handleAdd(e)}
             >
                 Add
             </button>
-        </div>
+        </form>
+
     );
 }
 
