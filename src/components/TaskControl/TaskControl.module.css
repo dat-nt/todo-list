@@ -1,0 +1,29 @@
+.container {
+    margin: 0 auto;
+    margin-bottom: 16px;
+    width: 600px;
+    max-width: 100%;
+    min-width: var(--min-width);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px;
+    border-top: 2px rgb(227, 227, 227) solid;
+    border-bottom: 2px rgb(227, 227, 227) solid;
+}
+
+.btn {
+    width: 140px;
+    color: var(--text-color);
+    border: 1px solid #e37a118c;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 4px 2px;
+    cursor: pointer;
+}
+.markButton {
+    background-color: #44440e;
+}
+.deleteButton {
+    background-color: #6b0e06;
+}

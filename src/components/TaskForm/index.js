@@ -12,6 +12,9 @@ function TaskForm({ onAdd }) {
             setTask('');
             inputBox.current.focus();
         }
+        else {
+            alert("Input can not be blank!");
+        }
     }
 
     return (

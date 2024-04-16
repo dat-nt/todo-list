@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Task from './components/Task';
 import TaskForm from './components/TaskForm';
+import TaskControl from './components/TaskControl';
 
 function App() {
     const [tasks, setTasks] = useState(() => {
@@ -26,11 +27,27 @@ function App() {
         })
     }
 
+    const markAllTasksDone = () => {
+        setTasks(prev => {
+            const newTasks = prev.map((task) => {
+                return {
+                    ...task,
+                    isDone: true
+                }
+            });
+            return newTasks;
+        })
+    }
+
     const deleteTask = (indexToDelete) => {
         setTasks(prev => {
             const newTasks = prev.filter((task, index) => indexToDelete !== index);
             return newTasks;
         })
+    }
+
+    const deleteAllTasks = () => {
+        setTasks([]);
     }
 
     const renameTask = (renameIndex, newName) => {
@@ -72,7 +89,11 @@ function App() {
                 onAdd={addTask}
             />
 
-            {/* {totalTask !== 0 ? <TaskControl /> : null} */}
+            {totalTask !== 0 ?
+                <TaskControl
+                    onDeleteAll={deleteAllTasks}
+                    onMarkAll={markAllTasksDone}
+                /> : null}
 
             {tasks.map((task, index) => (
                 <Task
