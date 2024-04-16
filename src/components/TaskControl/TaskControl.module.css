@@ -7,13 +7,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 8px;
+    padding: 8px 0;
     border-top: 2px rgb(227, 227, 227) solid;
     border-bottom: 2px rgb(227, 227, 227) solid;
 }
 
 .btn {
-    width: 140px;
+    width: 116px;
     color: var(--text-color);
     border: 1px solid #e37a118c;
     border-radius: 5px;
@@ -22,8 +22,8 @@
     cursor: pointer;
 }
 .markButton {
-    background-color: #44440e;
+    background-color: rgba(8, 81, 8, 0.5);
 }
 .deleteButton {
-    background-color: #6b0e06;
+    background-color: rgba(107, 14, 6, 0.5);
 }

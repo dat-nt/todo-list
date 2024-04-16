@@ -1,12 +1,24 @@
 .editForm {
     position: absolute;
-    left: 0;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 600px;
+    left: -2px;
+    width: calc(100% + 4px);
     min-width: var(--min-width);
+    background-color: #bab2d6;
+    border: 2px solid #000;
+    border-radius: 10px;
+    animation: fadeIn linear 0.4s;
     display: flex;
-    background-color: rgb(186, 178, 214);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scaleY(2);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
 }
 
 .editInput {
@@ -14,6 +26,7 @@
     border: none;
     padding: 0 8px;
     font-size: 16px;
+    outline: none;
     background-color: transparent;
 }
 
@@ -21,7 +34,10 @@
     background-color: rgb(69, 19, 139);
     color: var(--text-color);
     font-weight: bold;
-    padding: 12px 24px;
+    width: 114px;
+    padding: 16px 0;
     border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     cursor: pointer;
 }

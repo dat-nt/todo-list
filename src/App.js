@@ -39,6 +39,18 @@ function App() {
         })
     }
 
+    const clearAllMark = () => {
+        setTasks(prev => {
+            const newTasks = prev.map((task) => {
+                return {
+                    ...task,
+                    isDone: false
+                }
+            });
+            return newTasks;
+        })
+    }
+
     const deleteTask = (indexToDelete) => {
         setTasks(prev => {
             const newTasks = prev.filter((task, index) => indexToDelete !== index);
@@ -56,6 +68,10 @@ function App() {
             newTasks[renameIndex].name = newName;
             return newTasks;
         })
+    }
+
+    const isAllDone = () => {
+        return tasks.filter(task => task.isDone === false).length === 0;
     }
 
     const totalTask = tasks.length;
@@ -93,6 +109,8 @@ function App() {
                 <TaskControl
                     onDeleteAll={deleteAllTasks}
                     onMarkAll={markAllTasksDone}
+                    onClearAll={clearAllMark}
+                    isAllDone={isAllDone}
                 /> : null}
 
             {tasks.map((task, index) => (

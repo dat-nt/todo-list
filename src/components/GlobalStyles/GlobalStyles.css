@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --text-color: #efd3c5;
-    --min-width: 300px;
+    --text-color: #f4ddd5;
+    --min-width: 340px;
 }
 
 * {
@@ -18,22 +18,23 @@ html {
 
 body {
     color: var(--text-color);
-    background-color: rgb(39, 18, 51);
     margin: 0 auto;
+    background: url('../../assets/image/bg-image.jpg') center/cover no-repeat fixed;
 }
 
 .App {
-    padding: 0 8px;
+    padding: 0 8px 32px 8px;
 }
 
 .appHeader {
     text-align: center;
     margin: 32px auto;
     min-width: var(--min-width);
+    text-shadow: 2px 2px #0e0b015a;
 }
 
 .appHeader h1 {
-    color: rgb(231, 231, 13);
+    color: #d56f2f;
 }
 
 .appHeader h2,

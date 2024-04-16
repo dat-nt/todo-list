@@ -6,27 +6,31 @@
     width: 600px;
     max-width: 100%;
     min-width: var(--min-width);
-    border: 1px solid #000;
-    background-color: rgb(81, 72, 88);
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
     padding: 4px 8px;
-    transition: all 0.3s linear;
+    transition: all 0.4s linear;
     position: relative;
 }
 
 .done {
-    background-color: rgb(120, 95, 203);
+    background-color: rgb(35, 83, 42, 0.6);
 }
 
 .taskCheck {
-    accent-color: green;
-    height: 24px;
-    width: 24px;
+    accent-color: rgb(169, 187, 198);
+    height: 20px;
+    width: 20px;
     cursor: pointer;
 }
 
 .taskName {
     flex: 1;
-    margin: 0 8px;
+    margin: 0 12px;
+    padding: 4px 0;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    text-wrap: wrap;
 }
 
 .done .taskName {
@@ -35,6 +39,8 @@
 
 .btn {
     font-weight: bold;
+    width: 50px;
+    padding: 10px 0;
     border: 1px solid #e37a118c;
     border-radius: 5px;
     cursor: pointer;
@@ -42,17 +48,14 @@
 }
 
 .editButton {
-    background-color: rgb(116, 139, 14);
-    padding: 8px 11px;
+    background-color: #e37a118c;
 }
 
 .disabled {
-    cursor: no-drop;
-    opacity: 0.5;
+    visibility: hidden;
 }
 
 .deleteButton {
     background-color: rgb(107, 14, 6);
-    padding: 8px 4px;
     margin-left: 8px;
 }
