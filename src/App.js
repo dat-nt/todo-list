@@ -56,7 +56,7 @@ function App() {
     }
 
     return (
-        <div className="app">
+        <div className="App">
             <div className="appHeader">
                 <h1>TO DO LIST</h1>
                 {totalTask !== 0 ?
@@ -71,6 +71,8 @@ function App() {
             <TaskForm
                 onAdd={addTask}
             />
+
+            {/* {totalTask !== 0 ? <TaskControl /> : null} */}
 
             {tasks.map((task, index) => (
                 <Task

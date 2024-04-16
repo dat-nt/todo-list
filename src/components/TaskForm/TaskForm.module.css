@@ -1,17 +1,18 @@
 .taskForm {
-    width: 40%;
+    width: 400px;
+    min-width: var(--min-width);
+    max-width: 100%;
     margin: 0 auto;
-    margin-bottom: 32px;
-    min-width: 300px;
     display: flex;
 }
 
 .taskInput {
     flex: 1;
-    border: 1px solid #e37a118c;
+    border: 2px solid #e37a118c;
     border-radius: 5px;
     padding: 8px 8px;
     margin-right: 4px;
+    font-size: 16px;
 }
 
 .addButton {

@@ -2,6 +2,7 @@
 
 :root {
     --text-color: #efd3c5;
+    --min-width: 300px;
 }
 
 * {
@@ -18,15 +19,21 @@ html {
 body {
     color: var(--text-color);
     background-color: rgb(39, 18, 51);
+    margin: 0 auto;
 }
 
-/* .app {
-    margin: 0 auto;
-} */
+.App {
+    padding: 0 8px;
+}
 
 .appHeader {
     text-align: center;
-    margin: 32px 0;
+    margin: 32px auto;
+    min-width: var(--min-width);
+}
+
+.appHeader h1 {
+    color: rgb(231, 231, 13);
 }
 
 .appHeader h2,

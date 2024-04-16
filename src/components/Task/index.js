@@ -1,45 +1,34 @@
 import clsx from 'clsx';
 import styles from './Task.module.css';
 import { useState } from 'react';
+import EditTask from '../EditTask';
 
 function Task({ name, isDone, onToggle, onDelete, onRename }) {
 
     const [editMode, setEditMode] = useState(false);
 
     return (
-        <div className={clsx(styles.task, {
-            [styles.done]: isDone
-        })}
+        <div className={clsx(styles.task, { [styles.done]: isDone })}
         >
             <input
                 type="checkbox"
+                name={'check-' + name}
                 className={styles.taskCheck}
                 checked={isDone}
                 onChange={() => onToggle(!isDone)}
             />
 
-            {!editMode
-                ?
-                <p className={styles.taskName}>{name}</p>
-                :
-                <input
-                    className={styles.editTask}
-                    value={name}
-                    autoFocus
-                    onChange={(e) => onRename(e.target.value)}
-                // onBlur={(e) => {
-                //     setEditMode(false);
-                // }}
-                />
-            }
+            <p className={styles.taskName}>{name}</p>
 
             <button
-                className={clsx(styles.btn, styles.editButton)}
-                onClick={() => setEditMode(prev => !prev)}
+                className={clsx(styles.btn, styles.editButton, {
+                    [styles.disabled]: isDone
+                })}
+                onClick={() => setEditMode(true)}
+                disabled={isDone}
             >
-                {!editMode ? "Edit" : "Update"}
+                Edit
             </button>
-
 
             <button
                 className={clsx(styles.btn, styles.deleteButton)}
@@ -47,6 +36,15 @@ function Task({ name, isDone, onToggle, onDelete, onRename }) {
             >
                 Delete
             </button>
+
+            {editMode && (
+                <EditTask
+                    taskName={name}
+                    setEditMode={setEditMode}
+                    onRename={onRename}
+                />
+            )}
+
         </div >
     );
 }

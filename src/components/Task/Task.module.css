@@ -1,14 +1,16 @@
 .task {
-    margin: 8px auto;
+    margin: 12px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
-    min-width: 400px;
+    width: 600px;
+    max-width: 100%;
+    min-width: var(--min-width);
     border: 1px solid #000;
     background-color: rgb(81, 72, 88);
     padding: 4px 8px;
     transition: all 0.3s linear;
+    position: relative;
 }
 
 .done {
@@ -22,19 +24,12 @@
     cursor: pointer;
 }
 
-.taskName,
-.editTask {
+.taskName {
     flex: 1;
     margin: 0 8px;
     overflow: hidden;
     text-wrap: nowrap;
     text-overflow: ellipsis;
-}
-
-.editTask {
-    padding: 12px 8px;
-    border: none;
-    background-color: #94cdf0;
 }
 
 .btn {
@@ -48,6 +43,11 @@
 .editButton {
     background-color: rgb(116, 139, 14);
     padding: 8px 11px;
+}
+
+.disabled {
+    cursor: no-drop;
+    opacity: 0.5;
 }
 
 .deleteButton {

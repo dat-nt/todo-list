@@ -1,0 +1,27 @@
+.editForm {
+    position: absolute;
+    left: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 600px;
+    min-width: var(--min-width);
+    display: flex;
+    background-color: rgb(186, 178, 214);
+}
+
+.editInput {
+    flex: 1;
+    border: none;
+    padding: 0 8px;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.updateButton {
+    background-color: rgb(69, 19, 139);
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+}
